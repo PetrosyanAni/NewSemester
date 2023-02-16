@@ -3,6 +3,7 @@ package sportsman;
 public class Sportsman {
     int[] competitions;
     int invalidScore = 0;
+    double average;
 
     Sportsman(int... competitions) {
         this.competitions = competitions;
@@ -23,6 +24,24 @@ public class Sportsman {
         }
         count -= invalidScore;
         average /= count;
+        this.average = average;
         return average;
     }
+
+
+    int compareAverage(Sportsman sportsman) {
+        int result = 0;
+        if (this.average > sportsman.average) {
+            System.out.println(1);
+        } else if (this.average < sportsman.average) {
+            System.out.println(-1);
+        } else if (this.average == sportsman.average) {
+            System.out.println(0);
+        } else {
+            System.out.println("No competition");
+
+        }
+        return result;
+    }
+
 }
